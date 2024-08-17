@@ -11,7 +11,7 @@ def create_label_mapping(image_folder_path):
     return label_mapping
 
 # Load the trained model
-model = load_model()
+model = load_model('bird_species_classifier')
 
 # Path to the folder containing bird images organized in subfolders by species
 # image_folder_path = 'images_folders'

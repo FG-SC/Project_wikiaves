@@ -1,5 +1,5 @@
 numpy<=1.24.3
 streamlit>=1.35.0
-tensorflow>=2.15.0
-tensorflow_intel>=2.15.0
-distutils
+tensorflow<=2.15.0
+tensorflow_intel<=2.15.0
+setuptools

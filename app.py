@@ -14,10 +14,10 @@ def create_label_mapping(image_folder_path):
 model = load_model('bird_species_classifier.keras')
 
 # Path to the folder containing bird images organized in subfolders by species
-image_folder_path = 'images_folders'
+# image_folder_path = 'images_folders'
 
 # Generate the label mapping
-label_mapping = create_label_mapping(image_folder_path)
+label_mapping = create_label_mapping(['urutau', 'gaviao-real', 'coruja-buraqueira'])
 
 # Function to preprocess the uploaded image
 def preprocess_image(image, target_size=(256, 256)):

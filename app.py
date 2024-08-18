@@ -5,8 +5,8 @@ import numpy as np
 import os
 
 # Function to create the label mapping
-def create_label_mapping(image_folder_path):
-    bird_species_dirs = sorted(os.listdir(image_folder_path))
+def create_label_mapping(species_list):
+    bird_species_dirs = sorted(species_list)
     label_mapping = {idx: species_dir.replace('_images', '') for idx, species_dir in enumerate(bird_species_dirs)}
     return label_mapping
 

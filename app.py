@@ -12,9 +12,11 @@ def create_label_mapping(species_list):
 
 # Load the trained model
 #model = tf.keras.models.load_model('bird_species_classifier')
-model = tf.keras.models.load_model('saved_model/bird_species_classifier')
+#model = tf.keras.models.load_model('saved_model/bird_species_classifier')
 
 #model = tf.keras.layers.TFSMLayer(filepath='saved_model/', call_endpoint='serving_default')
+model = tf.saved_model.load('saved_model/')
+
 # Path to the folder containing bird images organized in subfolders by species
 # image_folder_path = 'images_folders'
 

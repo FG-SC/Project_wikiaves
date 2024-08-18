@@ -51,8 +51,8 @@ if uploaded_file is not None:
         predicted_species = label_mapping.get(predicted_class, "Unknown Species")
 
         # Display the prediction
-        st.write(f"Predicted Bird Species: {predicted_species}")
+        st.markdown(f"## Predicted Bird Species: {predicted_species}")
     else:
-        st.write(f"Predicted Bird Species: otherwise")
+        st.markdown("## Predicted Bird Species: otherwise")
 
 

@@ -2,7 +2,6 @@ import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
-import os
 
 # Function to create the label mapping
 def create_label_mapping(species_list):
@@ -10,11 +9,7 @@ def create_label_mapping(species_list):
     label_mapping = {idx: species_dir.replace('_images', '') for idx, species_dir in enumerate(bird_species_dirs)}
     return label_mapping
 
-# Load the trained model
-#model = tf.keras.models.load_model('bird_species_classifier')
-#model = tf.keras.models.load_model('saved_model/bird_species_classifier')
-
-#model = tf.keras.layers.TFSMLayer(filepath='saved_model/', call_endpoint='serving_default')
+# Load the trained model using tf.saved_model.load
 model = tf.saved_model.load('saved_model/')
 
 # Path to the folder containing bird images organized in subfolders by species
@@ -46,12 +41,12 @@ if uploaded_file is not None:
     img = preprocess_image(uploaded_file)
 
     # Make predictions
-    predictions = model.predict(img)
+    predictions = model(img, training=False)
     predicted_class = np.argmax(predictions, axis=1)[0]
     
     values = list(predictions)[0] #list[array([[0.8843 , 0.02489, 0.0909 ]], dtype=float16)]
     threshold = .75
-    if values[predicted_class]>threshold:
+    if values[predicted_class] > threshold:
         # Map the predicted class to the bird species
         predicted_species = label_mapping.get(predicted_class, "Unknown Species")
 
@@ -59,4 +54,5 @@ if uploaded_file is not None:
         st.write(f"Predicted Bird Species: {predicted_species}")
     else:
         st.write(f"Predicted Bird Species: otherwise")
+
 

@@ -45,7 +45,7 @@ if uploaded_file is not None:
     predicted_class = np.argmax(predictions, axis=1)[0]
     
     values = list(predictions)[0] #list[array([[0.8843 , 0.02489, 0.0909 ]], dtype=float16)]
-    threshold = .75
+    threshold = .85
     if values[predicted_class] > threshold:
         # Map the predicted class to the bird species
         predicted_species = label_mapping.get(predicted_class, "Unknown Species")

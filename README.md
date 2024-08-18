@@ -4,9 +4,17 @@
 
 This project showcases a bird species classification model trained to identify images of three bird species using a Convolutional Neural Network (CNN) implemented in TensorFlow. The model is deployed as a Streamlit web application, allowing users to upload an image and receive a prediction of the bird species. If the model isn't confident about the image being one of the bird species, it classifies it as "otherwise."
 
+![Screenshot 2024-08-18 115706](https://github.com/user-attachments/assets/5a372165-c4e2-43fc-a99c-c2f16da39c2e)
+
+
 ## Dataset
 
-The dataset was scraped from the WikiAves website, a popular platform for birdwatchers in Brazil. Images were collected for the following three species:
+The dataset was scraped from the WikiAves website, a popular platform for birdwatchers in Brazil. 
+
+![image](https://github.com/user-attachments/assets/f4608f6c-4c5d-46a6-b055-35a6e67f9104)
+
+
+Images were collected for the following three species:
 - Urutau
 - Gavião-real
 - Coruja-buraqueira
@@ -30,8 +38,11 @@ The model is a Convolutional Neural Network (CNN) designed to classify images in
 
 The model's performance was evaluated using:
 - **Confusion Matrix**: To understand the model’s accuracy in classifying each species.
+![image](https://github.com/user-attachments/assets/4f82c6ff-d251-4f1c-ada4-c9a83ba53398)
+
 - **ROC/AUC Curve**: To assess the model's ability to distinguish between the bird species.
-  
+  ![image](https://github.com/user-attachments/assets/9441235f-4e7a-40e4-b54d-82af65e5c215)
+
 These metrics were crucial in refining the model and ensuring it performs reliably across different species.
 
 ## Application
